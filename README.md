@@ -25,7 +25,18 @@ Složka `fairytale_generator` obsahuje všechny související soubory pro mobiln
     python manage.py runserver
     ```
 
+### Vytvoření `.env` souboru
 
+Pro správnou funkčnost aplikace je nutné mít API klíče pro jednotlivé modely AI, jako jsou OpenAI (ChatGPT) a Gemini. Tyto klíče uložíš do souboru `.env`, který aplikace používá pro konfiguraci.
+
+1. V kořenovém adresáři projektu (`fairytale_generator`), vytvoř nový soubor s názvem **`.env`**.
+   
+2. Tento soubor bude obsahovat API klíče pro OpenAI a Gemini. Použij následující formát pro soubor `.env`:
+
+   ```dotenv
+   OPENAI_API_KEY=tvůj_openai_api_klíč
+   GEMINI_API_KEY=tvůj_gemini_api_klíč
+   
 ### Mobilní aplikace (fairytale_generator)
 1. **Instalace závislostí**:
     ```bash
