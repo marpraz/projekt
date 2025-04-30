@@ -1,13 +1,12 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // Přidání importu pro dotenv
 
 class AIService {
-  final String openAiApiKey = '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';
-  final String geminiApiKey = 'AIzaSyALtR64VVKwktLqxOtNJ-sQ8mRMfBPb0n0';
-
-
-
+  // Načteme klíče z .env
+  final String openAiApiKey = dotenv.env['OPENAI_API_KEY'] ?? ''; // Pokud není klíč, použije prázdný string
+  final String geminiApiKey = dotenv.env['GEMINI_API_KEY'] ?? '';
 
   Future<Map<String, String>> generateFairyTale(String model, String keywords, int length, String genre, String ending) async {
     try {
